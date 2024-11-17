@@ -1,0 +1,13 @@
+# Ignorar arquivos de credenciais
+chave.json
+
+# Ignorar o diretório __pycache__
+__pycache__/
+
+# Ignorar arquivos de ambiente virtual
+venv/
+.env/
+
+# Ignorar arquivos temporários do sistema
+*.log
+*.tmp
