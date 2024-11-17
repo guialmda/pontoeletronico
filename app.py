@@ -30,23 +30,26 @@ def autenticar_google_sheets():
         st.error(f"Detalhes do erro: {e}")
         return None
 
-# Função para registrar o ponto na planilha
 def registrar_ponto(nome):
     # Acessa a planilha
     client = autenticar_google_sheets()
     if client is None:
         return  # Se não conseguiu autenticar, não faz o registro
 
-    # Acessa a planilha específica usando o ID (substitua pelo ID da sua planilha)
-    planilha_id = "1eUhbqDqZPuV6lhlm0zCkEPZ_0hZarMneZnGgCicU3X8"  
-    sheet = client.open_by_key(planilha_id).sheet1
+    try:
+        # Acessa a planilha específica usando o ID (substitua pelo ID da sua planilha)
+        planilha_id = "1eUhbqDqZPuV6lhlm0zCkEPZ_0hZarMneZnGgCicU3X8"  
+        sheet = client.open_by_key(planilha_id).sheet1
 
-    # Pega a data e hora atual
-    data_atual = datetime.datetime.now().strftime("%Y-%m-%d")
-    hora_atual = datetime.datetime.now().strftime("%H:%M:%S")
+        # Pega a data e hora atual
+        data_atual = datetime.datetime.now().strftime("%Y-%m-%d")
+        hora_atual = datetime.datetime.now().strftime("%H:%M:%S")
 
-    # Adiciona os dados na planilha
-    sheet.append_row([nome, data_atual, hora_atual])
+        # Adiciona os dados na planilha
+        sheet.append_row([nome, data_atual, hora_atual])
+        st.success(f"Ponto registrado com sucesso para {nome}!")
+    except Exception as e:
+        st.error(f"Erro ao registrar ponto: {e}")
 
 # Função de login
 def fazer_login():
