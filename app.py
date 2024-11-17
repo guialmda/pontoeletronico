@@ -19,7 +19,7 @@ def autenticar_google_sheets():
         chave_dict = json.loads(chave_json)
         
         # Escopo da autenticação
-       scope = ["https://www.googleapis.com/auth/spreadsheets"]
+       scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
         
         # Autenticar usando as credenciais
         creds = ServiceAccountCredentials.from_json_keyfile_dict(chave_dict, scope)
