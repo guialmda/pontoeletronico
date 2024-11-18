@@ -1,7 +1,9 @@
 import streamlit as st
 import gspread
-from google.oauth2.service_account import Credentials
+import json
 import datetime
+from google.oauth2.service_account import Credentials
+import os
 
 # Definir usuários e senhas
 USUARIOS = {
@@ -9,12 +11,33 @@ USUARIOS = {
     "usuario2": "isso"
 }
 
+# Função para obter as credenciais do Google Secret Manager
+def get_google_credentials():
+    try:
+        # Acessa o segredo armazenado no GitHub (variável de ambiente)
+        google_credentials = os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON')
+
+        if google_credentials is None:
+            raise Exception("Credenciais do Google não encontradas!")
+
+        # Carrega as credenciais a partir do JSON armazenado
+        creds_dict = json.loads(google_credentials)
+        creds = Credentials.from_service_account_info(
+            creds_dict,
+            scopes=["https://www.googleapis.com/auth/spreadsheets"]
+        )
+        return creds
+    except Exception as e:
+        st.error(f"Erro ao carregar credenciais do Google Secret Manager: {str(e)}")
+        return None
+
 # Função para autenticar no Google Sheets
 def autenticar_google_sheets():
     try:
-        # Definir o escopo e carregar as credenciais
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = Credentials.from_service_account_file("chave.json", scopes=scope)
+        creds = get_google_credentials()
+        if creds is None:
+            return None  # Se as credenciais não puderem ser carregadas, não continua
+        
         client = gspread.authorize(creds)
         return client
     except Exception as e:
@@ -27,7 +50,7 @@ def registrar_ponto(nome):
         # Acessa a planilha
         client = autenticar_google_sheets()
         if client is None:
-            return  # Se falhar na autenticação, não continue
+            return  # Se falhar na autenticação, não continua
         
         sheet = client.open("Ponto Eletrônico").sheet1  # Acessa a primeira aba da planilha
         
