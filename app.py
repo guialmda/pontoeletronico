@@ -58,9 +58,3 @@ def app():
 # Executar o app
 if __name__ == "__main__":
     app()
-
-            st.success(f"Ponto registrado com sucesso para {st.session_state.usuario}!")
-
-# Executar o app
-if __name__ == "__main__":
-    app()
