@@ -3,6 +3,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
 
+pip install --upgrade gspread oauth2client google-auth
+
 # Definir usuários e senhas (em um ambiente real, isso seria mais seguro)
 USUARIOS = {
     "usuario1": "msm",
