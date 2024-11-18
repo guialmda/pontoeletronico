@@ -1,9 +1,9 @@
 import streamlit as st
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 import datetime
 
-# Definir usuários e senhas (em um ambiente real, isso seria mais seguro)
+# Definir usuários e senhas
 USUARIOS = {
     "usuario1": "msm",
     "usuario2": "isso"
@@ -11,8 +11,9 @@ USUARIOS = {
 
 # Função para autenticar no Google Sheets
 def autenticar_google_sheets():
+    # Definir o escopo e carregar as credenciais
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("chave.json", scope)
+    creds = Credentials.from_service_account_file("chave.json", scopes=scope)
     client = gspread.authorize(creds)
     return client
 
@@ -20,8 +21,8 @@ def autenticar_google_sheets():
 def registrar_ponto(nome):
     # Acessa a planilha
     client = autenticar_google_sheets()
-    sheet = client.open("Ponto Eletrônico").worksheet("pagina1")  
-
+    sheet = client.open("Ponto Eletrônico").sheet1  # Acessa a primeira aba da planilha
+    
     # Pega a data e hora atual
     data_atual = datetime.datetime.now().strftime("%Y-%m-%d")
     hora_atual = datetime.datetime.now().strftime("%H:%M:%S")
@@ -52,6 +53,12 @@ def app():
         # Opção para registrar o ponto
         if st.button("Registrar Ponto"):
             registrar_ponto(st.session_state.usuario)
+            st.success(f"Ponto registrado com sucesso para {st.session_state.usuario}!")
+
+# Executar o app
+if __name__ == "__main__":
+    app()
+
             st.success(f"Ponto registrado com sucesso para {st.session_state.usuario}!")
 
 # Executar o app
