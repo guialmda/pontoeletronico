@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ponto-eletronico-441904",
+  "private_key_id": "de643825ae86f2c16f6ab8ee0aed511288ed8efa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC2B4gfin5lKIv3\nCOFVolGlGOVYRb/L11xEa8BiZAXbNLRtWUNlsU2cvzg+EQks8PFeiZdXA8jI88vx\nB3y+1ZRUyqmsr20btBPbEqeeHVjbKAjS/hSdSxRm/JhlcgLWpWqFc9zO6O9Ywx0o\nzHC2ku6YYwmb3UnyuNMq0NSdtWYB6JlSsFjDso9VhsUY9gdYePSulL4tcR3qgXwv\nDnFc2+uOv5HgMD49vum1T1U//LwX9p4XAuF7BhI4Ub7ChdrO0S9NX6JPC8rJ9IAa\nQthOqjL0jK3sPNszzpzqRb8epoVKIoD7KssajYoEgBJf+6goxMA0E2t+du1Pic/L\n7MIYGSZzAgMBAAECggEATqbreOFxIsmFzLyADO3hhEpBEsa0jGHmQsQiMQFSDHj1\n+wemWQLm67MuHJdk1Q/Y40XlaBpBAB9jgCaBjr2fZZHaBb0ZEm7ZY3/ogCfjFHL0\neSKDCsH9s1AykybTtiZsY/R/tMGuZbaM22uWyjSrtpmYdcoEoUWeLLJmJCzUwj6g\nw94e2qDSAFNzHuT1rdMUhnzaLXDL7H9POi9Q+qXfcxs5pPN0ki7jE0Rs48+Rfn9i\nc58OAflscgx/USoHQcerFkUNt5yA7ovM0myNDx82YpnVb+qCFzvSKDGC1YfBVWX/\n5IfVvDPo7/Ina7pP9bqX1HpGZv5Tfsz6aAUYs+0CgQKBgQDucuGavZmMi5v7SLhK\nvuuW9r1A1NIAHHXwej/TGwNEAWErZG5beNgWZfGAeYF2xlmi0tuswFKzX3/cdOr9\n2v8A3vzkXDS2tQUMJVcCJLHGuiTczd9Ujta4rAwBdjhSirD9KSP74f3HTyb70H1K\n5bNjS/GZ6cuFwDMfxeTd3oyr8wKBgQDDbYi8gd88xa6jjTTN35OOOTb45wejOopr\noZUY9k+f5AX+FXun20JB1NVrgeSOcOhPhtbWDKuL+ytOy30W5MvwsfqmzJ6+PkUv\nCkaTHoJiBfXj3Iwu4OgYNPQCBUmeIdcNr3fC/AfWdCzhzVh2AUove5/YwaAIKRex\nTYNH+vS7gQKBgFNDsH4deRH36lb8FMadFp1Xucx6xH4fchuwRLtN8nz70leZsWOl\ntidUH9nSFCBKsSBHa0hOvFJApeBwv2I359YBB+QiQpIOch3EqDZqY93WQGsORM89\nNcO06FhWVOKV5anxhMw/JSRFAoLqUeYmgdbJvSsW1ef1rqSIsRu8y/h7AoGAFkNi\nMmdxMREsJgGuJE32F1u5QX3ARv4iSsSroZ5dz89AR4PXBHZcA/flIEw552hBbt3j\nl5r16AqDEoToCTWjbhY4gcwJwY6CfytigtwU6mnXa0/ywFxq1Gcj7R8BFfyw7SQy\nNopTskCl5EtqancXJnWk7iKQwp07z70O2aJjQwECgYBWnXKTfi6iXBL20KrbnTDs\nZq1g5lp/f6z5TeoZOCLqYBkB+pD+Ze68WSef8QeS4R9vPiPwL7RU+ceizPXzJYE9\noycnbc4/qjScxH0ejVeDD0wD7WBPhFQXxLP7pINUnrphS6O3IuklTq5C3C2mHTMh\nU2PZNcULYuqPN89bELKYxg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ponto441@ponto-eletronico-441904.iam.gserviceaccount.com",
+  "client_id": "102477427226736219989",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ponto441%40ponto-eletronico-441904.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
