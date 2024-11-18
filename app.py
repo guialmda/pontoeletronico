@@ -11,24 +11,40 @@ USUARIOS = {
 
 # Função para autenticar no Google Sheets
 def autenticar_google_sheets():
-    # Definir o escopo e carregar as credenciais
-    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = Credentials.from_service_account_file("chave.json", scopes=scope)
-    client = gspread.authorize(creds)
-    return client
+    try:
+        # Definir o escopo e carregar as credenciais
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = Credentials.from_service_account_file("chave.json", scopes=scope)
+        client = gspread.authorize(creds)
+        return client
+    except Exception as e:
+        st.error(f"Erro ao autenticar com o Google Sheets: {str(e)}")
+        return None
 
 # Função para registrar o ponto na planilha
 def registrar_ponto(nome):
-    # Acessa a planilha
-    client = autenticar_google_sheets()
-    sheet = client.open("Ponto Eletrônico").sheet1  # Acessa a primeira aba da planilha
-    
-    # Pega a data e hora atual
-    data_atual = datetime.datetime.now().strftime("%Y-%m-%d")
-    hora_atual = datetime.datetime.now().strftime("%H:%M:%S")
+    try:
+        # Acessa a planilha
+        client = autenticar_google_sheets()
+        if client is None:
+            return  # Se falhar na autenticação, não continue
+        
+        sheet = client.open("Ponto Eletrônico").sheet1  # Acessa a primeira aba da planilha
+        
+        # Pega a data e hora atual
+        data_atual = datetime.datetime.now().strftime("%Y-%m-%d")
+        hora_atual = datetime.datetime.now().strftime("%H:%M:%S")
 
-    # Adiciona os dados na planilha
-    sheet.append_row([nome, data_atual, hora_atual])
+        # Adiciona os dados na planilha
+        sheet.append_row([nome, data_atual, hora_atual])
+        st.success(f"Ponto registrado com sucesso para {nome}!")
+    
+    except gspread.exceptions.SpreadsheetNotFound as e:
+        st.error(f"Erro ao encontrar a planilha: {str(e)}")
+    except gspread.exceptions.APIError as e:
+        st.error(f"Erro na API do Google Sheets: {str(e)}")
+    except Exception as e:
+        st.error(f"Erro inesperado ao registrar o ponto: {str(e)}")
 
 # Função de login
 def fazer_login():
@@ -53,7 +69,6 @@ def app():
         # Opção para registrar o ponto
         if st.button("Registrar Ponto"):
             registrar_ponto(st.session_state.usuario)
-            st.success(f"Ponto registrado com sucesso para {st.session_state.usuario}!")
 
 # Executar o app
 if __name__ == "__main__":
