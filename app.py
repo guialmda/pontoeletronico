@@ -30,12 +30,12 @@ def app():
 
         # Opção para registrar o ponto
         if
-        st.button("Registrar Ponto"):
-        http = urllib3.PoolManager()
-        link = f"https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
-        r = http.request('GET', link)
-        r.status
-        st.write(r.status)
+            st.button("Registrar Ponto"):
+            http = urllib3.PoolManager()
+            link = f"https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
+            r = http.request('GET', link)
+            r.status
+            st.write(r.status)
                 
 
 # Executar o app
