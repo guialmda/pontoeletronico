@@ -1,8 +1,4 @@
 import streamlit as st
-import gspread
-import json
-import datetime
-from google.oauth2.service_account import Credentials
 import os
 
 # Definir usuários e senhas
