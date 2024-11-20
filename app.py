@@ -42,7 +42,7 @@ def app():
         btnENTRADA = Botao_Colorido("REGISTRAR ENTRADA")
         if btnENTRADA:
             http = urllib3.PoolManager()
-            link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244=VINICIUS&entry.1020301816=ENTRADA" 
+            link = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Entrada" 
             r = http.request('GET', link)
             r.status
             st.write(r.status)
@@ -50,7 +50,7 @@ def app():
         # Opção para registrar o ponto
         if st.button("Registrar Ponto SAIDA",type = "primary"):
             http = urllib3.PoolManager()
-            link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244=VINICIUS&entry.1020301816=SAIDA" 
+            link = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida" 
             r = http.request('GET', link)
             r.status
             st.write(r.status)
