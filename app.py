@@ -10,7 +10,7 @@ import pandas as pd
 # Definir usuários e senhas
 USUARIOS = {
     "VINI": "VINI321"
-    "WILL": "WILL"
+    "WILL": "WILL321"
 }
 
 # Função de login
