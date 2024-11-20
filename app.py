@@ -29,7 +29,20 @@ def app():
         st.title(f"Batedor de Ponto Eletrônico - {st.session_state.usuario}")
 
         # Opção para registrar o ponto
-        if st.button("Registrar Ponto"):
+        if st.button("Registrar Ponto ENTRADA"):
+            http = urllib3.PoolManager()
+            link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
+            r = http.request('GET', link)
+            r.status
+            st.write(r.status)
+            
+      if "usuario" not in st.session_state:
+        fazer_login()
+    else:
+        st.title(f"Batedor de Ponto Eletrônico - {st.session_state.usuario}")
+
+        # Opção para registrar o ponto
+        if st.button("Registrar Ponto SAIDA"):
             http = urllib3.PoolManager()
             link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
             r = http.request('GET', link)
