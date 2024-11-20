@@ -36,11 +36,6 @@ def app():
             r.status
             st.write(r.status)
             
-      if "usuario" not in st.session_state:
-        fazer_login()
-    else:
-        st.title(f"Batedor de Ponto Eletrônico - {st.session_state.usuario}")
-
         # Opção para registrar o ponto
         if st.button("Registrar Ponto SAIDA"):
             http = urllib3.PoolManager()
