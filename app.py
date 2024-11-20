@@ -48,7 +48,7 @@ def app():
             st.write(r.status)
             
         # Opção para registrar o ponto
-        if st.button("Registrar Ponto SAIDA"):
+        if st.button("Registrar Ponto SAIDA",type = "primary"):
             http = urllib3.PoolManager()
             link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
             r = http.request('GET', link)
