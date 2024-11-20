@@ -42,7 +42,7 @@ def app():
         btnENTRADA = Botao_Colorido("REGISTRAR ENTRADA")
         if btnENTRADA:
             http = urllib3.PoolManager()
-            link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
+            link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244=VINICIUS&entry.1020301816=ENTRADA" 
             r = http.request('GET', link)
             r.status
             st.write(r.status)
