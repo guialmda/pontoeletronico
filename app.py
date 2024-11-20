@@ -20,7 +20,7 @@ def fazer_login():
             st.success(f"Bem-vindo, {usuario}!")
         else:
             st.error("Usuário ou senha inválidos!")
-def Botao_Colorido(rotulo, cor = "#7e7b7b"):
+def Botao_Colorido(rotulo, cor = "#FFFFFF"):
     Botao_Colorido.cor = cor
     st.markdown("""<style>  .element-container:has(style){display: none;} #button-after {display: none;}
                             .element-container:has(#button-after) {display: none;}
