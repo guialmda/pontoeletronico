@@ -1,6 +1,5 @@
 import streamlit as st
 import urllib3
-from urllib3 import request
 
 # Definir usuários e senhas
 USUARIOS = {
@@ -20,41 +19,46 @@ def fazer_login():
             st.success(f"Bem-vindo, {usuario}!")
         else:
             st.error("Usuário ou senha inválidos!")
-def Botao_Colorido(rotulo, cor = "#FFFFFF"):
-    Botao_Colorido.cor = cor
-    st.markdown("""<style>  .element-container:has(style){display: none;} #button-after {display: none;}
-                            .element-container:has(#button-after) {display: none;}
-                            .element-container:has(#button-after) + div button {background-color: %s;font-weight: bolder; color:black;}
-                </style>"""%(Botao_Colorido.cor), unsafe_allow_html=True)
-    st.markdown('<span id="button-after"></span>', unsafe_allow_html=True)
-    respBTNColor = st.button(rotulo)
-    return respBTNColor
-    
+
+# Função para criar botões coloridos
+def Botao_Colorido(rotulo, cor="#FFFFFF"):
+    st.markdown(f"""
+        <style>
+            div.stButton > button {{
+                background-color: {cor};
+                color: black;
+                font-weight: bold;
+            }}
+        </style>
+    """, unsafe_allow_html=True)
+    return st.button(rotulo)
+
 # Função principal
 def app():
     if "usuario" not in st.session_state:
         fazer_login()
     else:
-        st.title(f"Batedor de Ponto Eletrônico - {st.session_state.usuario}")
+        usuario = st.session_state.usuario
+        st.title(f"Batedor de Ponto Eletrônico - {usuario}")
 
-        # Opção para registrar o ponto
-        # if st.button("Registrar Ponto ENTRADA"):
-        btnENTRADA = Botao_Colorido("REGISTRAR ENTRADA")
-        if btnENTRADA:
+        # Links personalizados para cada usuário
+        if usuario == "VINI":
+            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Entrada"
+            link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida"
+        elif usuario == "WILL":
+            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Entrada"
+            link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Saida"
+
+        # Botões personalizados
+        if Botao_Colorido("REGISTRAR ENTRADA", cor="#90EE90"):
             http = urllib3.PoolManager()
-            link = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Entrada" 
-            r = http.request('GET', link)
-            r.status
-            st.write(r.status)
-            
-        # Opção para registrar o ponto
-        if st.button("Registrar Ponto SAIDA",type = "primary"):
+            r = http.request('GET', link_entrada)
+            st.write(f"Status da solicitação: {r.status}")
+
+        if Botao_Colorido("REGISTRAR SAÍDA", cor="#FFB6C1"):
             http = urllib3.PoolManager()
-            link = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida" 
-            r = http.request('GET', link)
-            r.status
-            st.write(r.status)
-                
+            r = http.request('GET', link_saida)
+            st.write(f"Status da solicitação: {r.status}")
 
 # Executar o app
 if __name__ == "__main__":
