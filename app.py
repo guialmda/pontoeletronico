@@ -9,7 +9,7 @@ import pandas as pd
 
 # Definir usuários e senhas
 USUARIOS = {
-    "VINI": "VINI321"
+    "VINI": "VINI321",
     "WILL": "WILL321"
 }
 
