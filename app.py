@@ -50,12 +50,12 @@ def app():
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Saida"
 
         # Botões personalizados
-        if Botao_Colorido("REGISTRAR ENTRADA", cor="#90EE90"):
+        if Botao_Colorido("REGISTRAR ENTRADA", cor="#FFFFFF"):
             http = urllib3.PoolManager()
             r = http.request('GET', link_entrada)
             st.write(f"Status da solicitação: {r.status}")
 
-        if Botao_Colorido("REGISTRAR SAÍDA", cor="#90EE90"):
+        if Botao_Colorido("REGISTRAR SAÍDA", cor="#FFFFFF"):
             http = urllib3.PoolManager()
             r = http.request('GET', link_saida)
             st.write(f"Status da solicitação: {r.status}")
