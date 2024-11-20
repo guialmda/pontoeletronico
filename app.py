@@ -1,10 +1,16 @@
 import streamlit as st
 import os
+import urllib3
+from urllib3 import request
+# json data
+import json
+# pandas dataframes
+import pandas as pd
 
 # Definir usuários e senhas
 USUARIOS = {
-    "usuario1": "msm",
-    "usuario2": "isso"
+    "VINI": "VINI321"
+    "WILL": "WILL"
 }
 
 # Função de login
@@ -29,7 +35,10 @@ def app():
         
         # Opção para registrar o ponto
         if st.button("Registrar Ponto"):
-            registrar_ponto(st.session_state.usuario)
+http = urllib3.PoolManager()
+link = "https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244=USER&entry.1020301816=ES"
+r = http.request('GET', link)
+r.status
 
 # Executar o app
 if __name__ == "__main__":
