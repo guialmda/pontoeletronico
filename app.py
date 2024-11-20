@@ -55,7 +55,7 @@ def app():
             r = http.request('GET', link_entrada)
             st.write(f"Status da solicitação: {r.status}")
 
-        if Botao_Colorido("REGISTRAR SAÍDA", cor="#FFB6C1"):
+        if Botao_Colorido("REGISTRAR SAÍDA", cor="#90EE90"):
             http = urllib3.PoolManager()
             r = http.request('GET', link_saida)
             st.write(f"Status da solicitação: {r.status}")
