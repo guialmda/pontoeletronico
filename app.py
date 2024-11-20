@@ -29,6 +29,7 @@ def app():
         st.title(f"Batedor de Ponto Eletrônico - {st.session_state.usuario}")
 
         # Opção para registrar o ponto
+        if
         st.button("Registrar Ponto"):
         http = urllib3.PoolManager()
         link = f"https://docs.google.com/forms/d/e/1FAIpQLScjfglFk9DS7OSntG9ORwPB6EqLWYRUq6SbEyRNBBbFAceFNg/formResponse?&submit=Submit?usp=pp_url&entry.1959026244={usuario}&entry.1020301816=ES" 
