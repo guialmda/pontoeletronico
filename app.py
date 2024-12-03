@@ -47,7 +47,7 @@ def app():
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida"
             link_arquivo = "https://docs.google.com/spreadsheets/d/1QoGflMc1sOeIE7uCys9CLWrMeB0I1vDe90T8AKnbCy0/edit?usp=sharing"
         elif usuario == "WILL":
-            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSf2MxkTM-kxsxWeU52OwP2EMZMbGFdrfg3Jwj5N0dbNU6YGlQ/formResponse?&submit=Submit?usp=pp_url&entry.1615807504=Willam&entry.624774481=Entrada"
+            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSf2MxkTM-kxsxWeU52OwP2EMZMbGFdrfg3Jwj5N0dbNU6YGlQ/formResponse?&submit=Submit?usp=pp_url&entry.1615807504=William&entry.624774481=Entrada"
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSf2MxkTM-kxsxWeU52OwP2EMZMbGFdrfg3Jwj5N0dbNU6YGlQ/formResponse?&submit=Submit?usp=pp_url&entry.1615807504=William&entry.624774481=Saida"
             link_arquivo = "https://docs.google.com/spreadsheets/d/1NAIXOo2WSAoByDAkwsf_n2eCrxh-dFV7d-Ev4e68jyg/edit?usp=sharing" 
 
