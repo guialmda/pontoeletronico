@@ -47,8 +47,8 @@ def app():
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida"
             link_arquivo = "https://docs.google.com/spreadsheets/d/1QoGflMc1sOeIE7uCys9CLWrMeB0I1vDe90T8AKnbCy0/edit?usp=sharing"
         elif usuario == "WILL":
-            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Entrada"
-            link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Saida"
+            link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSf2MxkTM-kxsxWeU52OwP2EMZMbGFdrfg3Jwj5N0dbNU6YGlQ/viewform?usp=pp_url&entry.1615807504=Willam&entry.624774481=Entrada"
+            link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSf2MxkTM-kxsxWeU52OwP2EMZMbGFdrfg3Jwj5N0dbNU6YGlQ/viewform?usp=pp_url&entry.1615807504=William&entry.624774481=Saida"
             link_arquivo = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKkDe4Anz1XsU8xBPB2HRV15-L2tO5WMqxuIex6DQurGERb6cZm7kPqIkr_Do216W5EZhEtflp93GO/pub?gid=1819121375&single=true&output=pdf" 
 
         # Botões personalizados
