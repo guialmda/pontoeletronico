@@ -45,7 +45,7 @@ def app():
         if usuario == "VINI":
             link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Entrada"
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=Vinicius&entry.1914771938=Saida"
-            link_arquivo = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKkDe4Anz1XsU8xBPB2HRV15-L2tO5WMqxuIex6DQurGERb6cZm7kPqIkr_Do216W5EZhEtflp93GO/pub?gid=1623799998&single=true&output=pdf"
+            link_arquivo = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKkDe4Anz1XsU8xBPB2HRV15-L2tO5WMqxuIex6DQurGERb6cZm7kPqIkr_Do216W5EZhEtflp93GO/pub?gid=1775275826&single=true&output=pdf"
         elif usuario == "WILL":
             link_entrada = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Entrada"
             link_saida = "https://docs.google.com/forms/d/e/1FAIpQLSeb8wPZbax0WyFKS9IO6Dl4xPdTeiav4uuEUUOtA6GaISdTEA/formResponse?&submit=Submit?usp=pp_url&entry.1189838164=William&entry.1914771938=Saida"
